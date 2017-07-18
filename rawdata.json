@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Amit Kumar",
+        "email": "amit@gmail.com",
+        "phone": "7845687956",
+        "comment": "I am eager to learn about it."
+    },
+    {
+        "name": "Mohit",
+        "email": "mohit@yahoo.com",
+        "phone": "8342964598",
+        "comment": "Really an fantastic thing ."
+    },
+    {
+        "name": "Rajesh",
+        "email": "rajesh@gmail.com",
+        "phone": "9834657898",
+        "comment": "I really like it.It is quite easy."
+    },
+    {
+        "name": "Kishore",
+        "email": "kishorerajput10@gmail.com",
+        "phone": "9993125209",
+        "comment": "Functionality is really good and implementation is typical."
+    },
+    {
+        "name": "Shivender",
+        "email": "shivender@gmail.com",
+        "phone": "9425654598",
+        "comment": "Concept of Props and States are typical."
+    },
+    {
+        "name": "Sourabh",
+        "email": "sourabh@yahoo.com",
+        "phone": "7415821392",
+        "comment": "Trying to get the functinality of it."
+    },
+    {
+        "name": "Arpit",
+        "email": "arpit@rediffmail.com",
+        "phone": "7415250502",
+        "comment": "The working is fast as compared to the Angular."
+    },
+    {
+        "name": "",
+        "email": "",
+        "phone": "",
+        "comment": ""
+    },
+    {
+        "name": "",
+        "email": "",
+        "phone": "",
+        "comment": ""
+    },
+    {
+        "name": "",
+        "email": "",
+        "phone": "",
+        "comment": ""
+    }
+]
