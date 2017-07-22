@@ -77,30 +77,30 @@ class Form extends React.Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="form-group">
                 <h2>My React form</h2>
                 <div className="form-horizontal " >
                     <div className="form-group col-md-6" >
                         <label >Name:</label><br />
-                        <input type="text" className="form-control" name="name" ref="kk" value={this.state.value} onChange={this.handleChange} />
+                        <input type="text" className="form-control" name="name" ref="kk" value={this.state.value} placeholder="Enter Name" onChange={this.handleChange} />
                         {this.state.nameError ? <span ref="nameError" style={{ color: "red", fontSize: "13px", 
                         fontStyle: "italic" }}>{this.state.nameErrorMsg}</span> : ''}
                     </div>
                     <div className="form-group col-md-6" >
                         <label >Email:</label><br />
-                        <input type="email" className="form-control" name="email" ref="ll" value={this.state.value} onChange={this.handleChange} />
+                        <input type="email" className="form-control" name="email" ref="ll" value={this.state.value} placeholder="Enter email" onChange={this.handleChange} />
                         {this.state.emailError ? <span ref="emailError" 
                         style={{ color: "red", fontSize: "13px", fontStyle: "italic" }}>{this.state.emailErrorMsg}</span> : ''}
                     </div>
                     <div className="form-group col-md-6" >
                         <label >Number:</label><br />
-                        <input type="text"  className="form-control" name="number" ref="mm" value={this.state.value} onChange={this.handleChange} />
+                        <input type="text"  className="form-control" name="number" ref="mm" value={this.state.value} placeholder="Mobile Number" onChange={this.handleChange} />
                         {this.state.numberError ? <span ref="numberError" 
                         style={{ color: "red", fontSize: "13px", fontStyle: "italic" }}>{this.state.numberErrorMsg}</span> : ''}
                     </div>
                     <div className="form-group col-md-6" >
                         <label >Comment:</label><br />
-                        <textarea className="form-control" ref="nn" name="comment" value={this.state.value} onChange={this.handleChange} style={{ maxWidth: '100%' }} ></textarea>
+                        <textarea className="form-control" ref="nn" name="comment" value={this.state.value} placeholder="Enter Comment" onChange={this.handleChange} style={{ maxWidth: '100%' }} ></textarea>
                     </div>
                     
                     <div className="form-group col-md-6" >
