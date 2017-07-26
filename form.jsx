@@ -15,6 +15,7 @@ class Form extends React.Component {
             nameErrorMsg:'',
             emailErrorMsg:'',
             numberErrorMsg:'',
+            formErr : true
            };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -47,6 +48,15 @@ class Form extends React.Component {
             this.setState({numberErrorMsg: this.state.numberErrorMsg})
         }
     
+            // if(this.state.nameError && this.state.emailError && this.state.numberError){
+            //     this.setState({formErr: false})
+            // }
+            console.log(this.state.nameError)
+            console.log(this.state.emailError)
+            console.log(this.state.numberError)
+       if((!this.state.name == '') && (!this.state.email == '') && (!this.state.number)){
+           this.setState({formErr : false})
+       }
 
         this.setState({ [name]: value })
 
@@ -104,7 +114,7 @@ class Form extends React.Component {
                     </div>
                     
                     <div className="form-group col-md-6" >
-                        <input type="submit" className="btn btn-success" onClick={this.handleSubmit} />
+                        <input type="submit" className="btn btn-success" disabled = {this.state.formErr} onClick={this.handleSubmit} />
                     </div>
                 </div>
             </div>
