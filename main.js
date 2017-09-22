@@ -7,7 +7,7 @@ import Contact from './contact.jsx'
 import PageNotFound from './pagenotfound.jsx'
 import State from './state.jsx'
 import Form from './form.jsx'
-import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router'
+import { Router, Route, Link, hashHistory } from 'react-router'
 
 
 ReactDOM.render((
@@ -18,7 +18,7 @@ ReactDOM.render((
             <Route path='/about' component={About}></Route>
             <Route path='/contact' component={Contact}></Route>
             <Route path='/state' component={State}></Route>
-            <Route path='form' component={Form}></Route>
+            <Route path='/form' component={Form}></Route>
             <Route path='*' component={PageNotFound}></Route>
            
         </Route>

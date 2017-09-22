@@ -87,7 +87,7 @@ class Form extends React.Component {
                 <div className="col-md-8 col-md-offset-2" style={{
                     backgroundColor:'wheat',
                     paddingTop:'10px', borderRadius:'5px', border:'1px solid #d1dfdf'}}>
-                   <center><h2>Registration Form</h2></center>
+                   <center><h2><b>User Reviews</b></h2></center>
                     <div className="form-group col-md-12" >
                         <label ><span className="glyphicon glyphicon-user"></span> Name:</label><br />
                         <input type="text" className="form-control" name="name" ref="kk" value={this.state.value} placeholder="Enter Name" onChange={this.handleChange} />
