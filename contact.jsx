@@ -96,11 +96,13 @@ class Contact extends React.Component {
                     </tr> 
         })
         return <div>
-            <h1>Search Contacts </h1>
-             <input type="text" onChange={this.onChange} placeholder='search'/>
-            <br/>
-            <br/>
-            < table className="user-table">
+            <div className="col-md-8 col-md-offset-2">
+            <h1 >Search Contacts </h1>
+             <input type="text" className="search-query form-control" onChange={this.onChange} placeholder="Search" />
+            </div>
+            <div className="col-md-10 col-md-offset-3" >
+                <div style={{ margin: "20px"}}>
+            < table className="user-table " >
                 <thead>
                     <tr> 
                         <td>Sl No.</td>
@@ -115,6 +117,8 @@ class Contact extends React.Component {
                     
                   </tbody>
             </table>
+            </div>
+            </div>
             
         </div>;
     }
