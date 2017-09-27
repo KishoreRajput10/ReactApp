@@ -2,43 +2,82 @@ import React from 'react';
 import List from './list.jsx'
 
 class State extends React.Component {
+
+    details(index){
+        let todos =this.state.todos;
+    let todo = todos.find(function(todo){
+     return todo.counter == index
+    });
+    console.log("You Are CLicking on")
+    console.log(todo);
+    }
+
+removeTodo(index){
+    let todos =this.state.todos;
+    let todo = todos.find(function(todo){
+     return todo.counter == index
+    });
+ todos.splice(todo,1);
+ this.setState({
+     todos:todos
+ });
+}
+
+    addTodo(event) {
+
+        event.preventDefault();
+        let name = this.refs.name.value;
+        let completed = this.refs.completed.value;
+        let counter = this.state.counter;
+
+        let todo = {
+            name,
+            completed,
+            counter
+        };
+        counter += 1;
+        let todos = this.state.todos;
+        todos.push(todo);
+        console.log(todos);
+        this.setState({
+            todos: todos,
+            counter: counter
+        });
+        this.refs.todoForm.reset();
+    }
+
     constructor() {
         super();
+        this.addTodo = this.addTodo.bind(this);
+        this.removeTodo= this.removeTodo.bind(this);
+        this.details= this.details.bind(this);
         this.state = {
-            data: [],
-            term:'',
-            items:[],
+            todos: [],
+            title: 'React simple to do.',
+            counter: 0,
         }
-        // this.myHandler = this.myHandler.bind(this);
     }
-    myHandler() {
-        var item = 'MY item'
-        var myHandl = this.state.data
-        myHandl.push(item)
-        this.setState({ data: myHandl })
-    };
-    onChange(event){
-          this.setState({term: event.target.value});
-    }
-    onSubmit(event){
-        event.preventDefault()
-        this.setState({
-        term:'',
-        items:[...this.state.items, this.state.term]
-        });
-    }
+
     render() {
+        let title = this.state.title;
+        let todos = this.state.todos;
         return (
-            <div>
-                <button onClick={this.myHandler.bind(this)} >Start Handle</button>
-                <h4>Handle : {this.state.data}</h4>
-                <br/>
-                <br/>
-                <form className="App" onSubmit= {this.onSubmit.bind(this)}>
-                <input value={this.state.term} onChange={this.onChange.bind(this)}/>
-                <button>Add </button>
+            <div className="App">
+                <h1>{title}</h1>
+                <form ref="todoForm" >
+                    <input type="text" ref="name" placeholder="What u want" />
+                    <input type="text" ref="completed" placeholder="Got?" />
+                    <button onClick={this.addTodo}>Add To Do</button>
                 </form>
-                <List items={this.state.items} />
+                <ul>
+                    {
+                        todos.map((todo => <li key={todo.counter}>{todo.name}
+                            <button onClick={this.removeTodo.bind(null,todo.counter)}>Remove Todo </button>
+                            <button onClick={this.details.bind(null,todo.counter)}>View Details</button>
+                        </li>))
+                    }
+                </ul>
+
             </div>
         );
     }
